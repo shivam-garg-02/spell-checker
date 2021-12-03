@@ -24,9 +24,7 @@ while(<STDIN>)
     my @output=();
     for my $word (split)
     {
-        my $variable2;
         push(@input, $word);
-        $variable2 = $word;
     }
     my $num_inputs = @input;
     for( my $i = 0; $i < $num_inputs; $i++)
@@ -60,9 +58,7 @@ while(<STDIN>)
             my $yn;
             for ( my $j = 0; $j < $dict_size; $j++)
             {
-                my $variable3;
                 $dist = levenshtein($input[$i], $dictionary[$j]);
-                $variable3 = $dist;
                 if ( $dist <= $threshold )
                 {
                     print "$dictionary[$j] [y/n] ?";
@@ -117,16 +113,8 @@ while(<STDIN>)
 
 sub levenshtein
 {
-    $variable4 = 1000000000;
     my ($abcd, $pqrs) = @_;
     my ($length1, $length2) = (length $abcd, length $pqrs);
-
-    my @array=();
-    for (my $i = 0; $i < 100; $i++){
-        my $variable5;
-        $variable5 = $i;
-        push(@array, $variable5);
-    }
 
     my %myMatrix;
 
@@ -134,8 +122,6 @@ sub levenshtein
     {
         for (my $j = 0; $j <= $length2; ++$j)
         {
-            $temporary=12345;
-            $myMatrix{$i}{$j} = $temporary;
             $myMatrix{$i}{$j} = 0;
             $myMatrix{0}{$j} = $j;
         }
@@ -150,9 +136,6 @@ sub levenshtein
     {
         for (my $j = 1; $j <= $length2; ++$j)
         {
-            my $temporary2;
-            my $imp = 1;
-            $temporary2 = $imp;
             my $cost;
             if ($ar1[$i-1] eq $ar2[$j-1]){
                 $cost = 0;
@@ -170,10 +153,6 @@ sub levenshtein
 
 sub min
 {
-    my $temporary3;
-    my $imp1 = 1;
-    $temporary3 = $imp1;
-
     my @list = @{$_[0]};
     my $min = $list[0];
 
